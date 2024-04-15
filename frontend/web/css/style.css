@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@500&display=swap');
+
 :root {
     --yellow: #f9ca24;
 }
@@ -64,7 +66,7 @@ section {
     font-size: 1.8rem;
 }
 
-.btn:hover {
+.btn:hover{
     background: var(--yellow);
     color: #111;
 }
@@ -74,6 +76,7 @@ section {
     margin: 0 6rem;
     font-size: 4rem;
     padding: 1rem;
+    color: #fff;
     border-bottom: .1rem solid #fff4;
 }
 
@@ -103,6 +106,11 @@ header .user img {
     object-fit: cover;
     margin-bottom: 1rem;
     border: .7rem solid var(--yellow);
+}
+
+header .user img:hover{
+    box-shadow: 0 10px 20px rgba(255, 149, 5, 0.3),
+                0 -10px 20px rgba(255, 149, 5, 0.3);
 }
 
 header .user .name {
@@ -177,10 +185,17 @@ header .navbar ul li a:hover {
 
 .home p {
     font-size: 2rem;
+    text-align: center;
     color: #eee;
     padding: 1rem 0;
+    text-transform: none;
 }
-
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 .about .row {
     display: flex;
     align-items: center;
@@ -236,7 +251,7 @@ header .navbar ul li a:hover {
 
 .education .box-container {
     display: flex;
-    align-items: center;
+    width: 95%;
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 1rem 0;
@@ -269,6 +284,7 @@ header .navbar ul li a:hover {
     font-size: 1.4rem;
     color: #eee;
     padding: 1rem 0;
+    text-transform: none;
 }
 
 .education .box-container .box i {
@@ -294,8 +310,10 @@ header .navbar ul li a:hover {
 }
 
 .portfolio .box-container .box {
-    height: 20rem;
-    width: 26rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     border-radius: 1rem;
     margin: 2rem;
     overflow: hidden;
@@ -303,18 +321,27 @@ header .navbar ul li a:hover {
 }
 
 .portfolio .box-container .box img {
-    height: 100%;
-    width: 100%;
+    height: 25rem;
     object-fit: cover;
+    background-position: center;
 }
 
-.portfolio .box-container .box:hover img {
-    transform: scale(1.2);
+.portfolio .box-container .box span{
+    font-family: 'Kode Mono', monospace;
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+    padding-top: 3rem;
+}
+
+.portfolio .box-container .box:hover span{
+    text-decoration: underline;
+    color: var(--yellow);
 }
 
 .contact .row {
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -322,6 +349,7 @@ header .navbar ul li a:hover {
 .contact .row .content {
     flex: 1 1 30rem;
     padding: 4rem;
+    margin: 2rem;
     padding-bottom: 0;
 }
 
@@ -368,6 +396,16 @@ header .navbar ul li a:hover {
     transition: all .1s ease-in-out;
 }
 
+.contact .row .content .info h3 a{
+    text-decoration: none;
+    color: #eee;
+}
+
+.contact .row .content .info h3 a:hover, .contact .row .content .info h3:hover {
+    text-decoration: none;
+    color: #0a0aff;
+}
+
 .contact .row .content .info h3 i {
     padding-right: 1rem;
     color: var(--yellow);
@@ -377,10 +415,30 @@ header .navbar ul li a:hover {
     position: fixed;
     bottom: 7rem;
     right: 5rem;
-    right: 2rem;
     z-index: 100;
     display: none;
 }
+
+
+header .navbar ul li .active{
+    background: var(--yellow);
+    color: #111;
+}
+
+.site-error{
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
 
 
 

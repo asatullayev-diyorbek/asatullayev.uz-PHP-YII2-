@@ -24,4 +24,6 @@ $this->title = $name;
         Please contact us if you think this is a server error. Thank you.
     </p>
 
+    <a href="/"><button class="btn">Goto back <i class="fas fa-home"></i></button></a>
+
 </div>
