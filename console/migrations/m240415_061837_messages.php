@@ -17,7 +17,8 @@ class m240415_061837_messages extends Migration
             // http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
-        $this->createTable('{{%messages}}', [
+        $this->createTable('{{%xabarlar}}', [
+            'id' => $this->primaryKey(),
             'name' => $this->string(255)->notNull(),
             'email' => $this->string(255)->notNull(),
             'theme' => $this->string(255)->notNull(),

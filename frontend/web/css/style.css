@@ -340,9 +340,11 @@ header .navbar ul li a:hover {
 }
 
 .contact .row {
+    width: 100%;
     display: flex;
     align-items: start;
     justify-content: center;
+    flex-direction: row;
     flex-wrap: wrap;
 }
 
@@ -435,9 +437,21 @@ header .navbar ul li .active{
     align-items: center;
 }
 
+label {
+    display: none;
+}
 
+.help-block{
+    color: #fff;
+}
 
-
+.flash{
+    font-size: 1.5rem;
+    background: var(--yellow);
+    color: #000;
+    width: 100%;
+    text-align: center;
+}
 
 
 
@@ -508,7 +522,7 @@ header .navbar ul li .active{
         width: 100%;
     }
 
-    .contact .row form {
+    .contact .row .form {
         margin: 3rem 0;
     }
 }

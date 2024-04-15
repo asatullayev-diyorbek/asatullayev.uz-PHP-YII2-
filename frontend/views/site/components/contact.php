@@ -1,3 +1,8 @@
+<?php
+use yii\widgets\ActiveForm;
+use yii\helpers\Html;
+?>
+
 <!-- contact section start  -->
 
 <section class="contact section" id="contact">
@@ -20,13 +25,30 @@
 
         </div>
 
-        <form action="">
+            <?php $form = ActiveForm::begin(['action' => ['site/xabar']]); ?>
+
+            <?= $form->field($xabarlar, 'name')->textInput(['maxlength' => true, 'class' => 'box', 'placeholder' => 'Name']) ?>
+
+            <?= $form->field($xabarlar, 'email')->textInput(['maxlength' => true, 'class' => 'box', 'placeholder' => 'email']) ?>
+
+            <?= $form->field($xabarlar, 'theme')->textInput(['maxlength' => true, 'class' => 'box', 'placeholder' => 'Theme']) ?>
+
+            <?= $form->field($xabarlar, 'message')->textarea(['rows' => 6, 'class' => 'box', 'placeholder' => 'Message']) ?>
+
+            <?php // $form->field($xabarlar, 'created_at')->textInput() ?>
+
+            <?= Html::submitButton("send <i class='fas fa-paper-plane'></i>", ['class' => 'btn btn-success']) ?>
+
+            <?php ActiveForm::end(); ?>
+
+
+        <!--<form action="">
             <input type="text" placeholder="name" class="box">
             <input type="email" placeholder="email" class="box">
             <input type="text" placeholder="project" class="box">
             <textarea name="message" id="message" rows="10" placeholder="message" class="box message"></textarea>
             <button type="submit" class="btn">send <i class="fas fa-paper-plane"></i></button>
-        </form>
+        </form> -->
 
     </div>
 

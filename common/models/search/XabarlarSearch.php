@@ -4,12 +4,12 @@ namespace common\models\search;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Info;
+use common\models\Xabarlar;
 
 /**
- * InfoSearch represents the model behind the search form of `common\models\Info`.
+ * XabarlarSearch represents the model behind the search form of `common\models\Xabarlar`.
  */
-class InfoSearch extends Info
+class XabarlarSearch extends Xabarlar
 {
     /**
      * {@inheritdoc}
@@ -17,8 +17,8 @@ class InfoSearch extends Info
     public function rules()
     {
         return [
-            [['id', 'age', 'status'], 'integer'],
-            [['first_name', 'last_name', 'job', 'img', 'language','content'], 'safe'],
+            [['id', 'created_at', 'status'], 'integer'],
+            [['name', 'email', 'theme', 'message'], 'safe'],
         ];
     }
 
@@ -40,7 +40,7 @@ class InfoSearch extends Info
      */
     public function search($params)
     {
-        $query = Info::find();
+        $query = Xabarlar::find();
 
         // add conditions that should always apply here
 
@@ -59,20 +59,14 @@ class InfoSearch extends Info
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'age' => $this->age,
+            'created_at' => $this->created_at,
             'status' => $this->status,
         ]);
 
-        $query->andFilterWhere(['like', 'first_name', $this->first_name])
-            ->andFilterWhere(['like', 'last_name', $this->last_name])
-            ->andFilterWhere(['like', 'job', $this->job])
-            ->andFilterWhere(['like', 'img', $this->img])
-            ->andFilterWhere(['like', 'age', $this->age])
-            ->andFilterWhere(['like', 'language', $this->language])
-            ->andFilterWhere(['like', 'gender', $this->gender])
-            ->andFilterWhere(['like', 'cv_link', $this->cv_link])
-            ->andFilterWhere(['like', 'content', $this->content])
-            ->andFilterWhere(['like', 'status', $this->status]);
+        $query->andFilterWhere(['like', 'name', $this->name])
+            ->andFilterWhere(['like', 'email', $this->email])
+            ->andFilterWhere(['like', 'theme', $this->theme])
+            ->andFilterWhere(['like', 'message', $this->message]);
 
         return $dataProvider;
     }
